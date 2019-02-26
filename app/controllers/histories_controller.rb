@@ -65,6 +65,7 @@ class HistoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_history
       @history = History.find(params[:id])
+      @history.user = helpers.current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
